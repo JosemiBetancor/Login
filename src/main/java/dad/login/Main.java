@@ -1,22 +1,19 @@
 package dad.login;
 
-import dad.login.auth.AuthService;
-import dad.login.auth.FileAuthService;
-import dad.login.auth.LdapAuthService;
-
 public class Main {
-	
-	public static void main(String[] args) throws Exception {
-		
-		boolean useLdap = true;
-		
-		AuthService auth = useLdap ? new LdapAuthService() : new FileAuthService();
-		System.out.println("Chuck Norris    : " + auth.login("cnorris", "patada"));
-		System.out.println("Charles Bronson : " + auth.login("cbronson", "Metrallet@1"));
-		System.out.println("David Carradine : " + auth.login("dcarradine", "kungfu"));
-		System.out.println("David Carradine : " + auth.login("dcarradine", "karate"));
-		System.out.println("Michael Knight  : " + auth.login("mknight", "kit"));
-		
+	public static void main(String[] args) {
+		App.main(args);
 	}
 
+	// Chuck Norris ("cnorris", "patada" ): true
+	// Charles Bronson ("cbronson","Metrallet@1"): true
+	// David Carradine (dcarradine","kungfu"): true
+	// David Carradine ("dcarradine","karate"): false
+	// Michael Knight ("mknight", "kit ): false
+	//sinLDAP
+	// Chuck Norris ("cnorris", "patada" ): true
+	// Charles Bronson ("cbronson","Metrallet@1"): false
+	// David Carradine (dcarradine","kungfu"): true
+	// David Carradine ("dcarradine","karate"): false
+	// Michael Knight ("mknight", "kit ): false
 }
